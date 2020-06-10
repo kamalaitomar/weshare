@@ -18,7 +18,15 @@ posts = [
         'content' : 'Second Post content',
         'date_posted': 'mai 21,2020'
 
-    }
+    },
+
+    {
+        'author' : 'Kamal ait omar',
+        'title' : 'Blog Post 3',
+        'content' : 'third Post content',
+        'date_posted': 'mai 22,2020'
+
+    } 
 ]
 
 @app.route('/')
