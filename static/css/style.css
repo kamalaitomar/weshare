@@ -1,10 +1,25 @@
+/* global styles */
 *{
+    font-family: 'Roboto' , sans-serif;
     box-sizing: border-box;
     margin : 0;
     padding: 0;
+    font-size: medium;
 }
 
-header li, a{
+body{
+    background-color: #f1f2f6;
+    display: flex;
+    justify-content: center;
+}
+
+main{
+    margin-top: 60px;
+}
+
+/* navigation bar styles */
+
+nav a{
     font-weight: 500;
     font-size: 16px;
     color: aliceblue;
@@ -14,11 +29,12 @@ header li, a{
 header{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding:10px 30px ;
     background-color: #1dd1a1;
-    position: fixed;
+    position: fixed; 
+    z-index: 1000; 
 }
 
 .nav_links{
@@ -39,6 +55,67 @@ header{
 }
 
 .logo{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
+
+/* Single Post  */ 
+
+.blog-post-info {
+    background-color: rgba(255, 255, 255, 0.719);
+    margin: 10px;
+    padding: 1rem;
+    width: 600px;
+    border: 1px solid rgba(0, 0, 0, 0.2) ;
+    border-radius: 10px;
+   
+}
+
+.blog-post-info img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin: 0 1rem 0 0;
+    border-radius: 50%;
+    display: block;
+  }
+
+
+.blog-post-info a {
+    text-decoration: none;  
+}
+
+.blog-post-info h2 {
+    margin:0px 0px 10px 20px;
+
+}
+  
+/* table style*/
+
+table{
+    width: 300px;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: #b2f3e2;
+    position: sticky;
+    top: 80px;
+    margin-left: 10px;
+}
+
+th{
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+table a{
+    text-decoration: none;
+    font-weight: 500;
+}
+
+tr, td{
+    border: 2px solid #1dd1a1;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+ 
