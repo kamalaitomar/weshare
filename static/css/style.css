@@ -1,10 +1,16 @@
+
 *{
+    font-family: 'Roboto' , sans-serif;
     box-sizing: border-box;
     margin : 0;
     padding: 0;
 }
+body{
+    background-color: #f1f2f6;
+    font-size: 85%;
+}
 
-header li, a{
+nav a{
     font-weight: 500;
     font-size: 16px;
     color: aliceblue;
@@ -19,6 +25,9 @@ header{
     padding:10px 30px ;
     background-color: #1dd1a1;
     position: fixed;
+    margin-bottom: 60px;
+    
+    
 }
 
 .nav_links{
@@ -42,3 +51,38 @@ header{
     width: 50px;
     height: 50px;
 }
+.blog-post-info a {
+    text-decoration: none;
+    
+}
+
+.blog-post-info{
+   
+    margin-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+
+    
+}
+
+/* Single Post  */ 
+
+.blog-post-info {
+
+    padding: 1rem;
+    max-width: 20rem;
+   
+  }
+  .blog-post-info img {
+    width: 75px;
+    height: 75px;
+    float: left;
+    margin: 0 1rem 0 0;
+  }
+  .blog-post-info h2 {
+    font-weight: 500;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  
+ 

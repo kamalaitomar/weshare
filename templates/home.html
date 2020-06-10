@@ -2,11 +2,31 @@
 {%block content%}
     {% for post in posts%}
 
-    <div class="post">
-        <h1> {{ post.author }} </h1> 
-        <p> {{ post.title }} on {{ post.date_posted }} </p> 
-        <p> {{ post.content }} </p>
-    </div>
+    <hr>
+        <div class="blog-post-info">
+            <img src="https://api.adorable.io/avatars/285/abott@adorable.io.png" alt="">
+
+            <div class="blog-post-authour">
+            <a href="#"><h1> {{ post.author }}</h1> </a> 
+            </div>
+            
+            <div class="blog-post-date">
+                {{ post.date_posted }}  
+            </div>
+
+            <div class="blog-post-title">
+                <h2> {{ post.title }} </h2>
+            </div>
+
+            
+
+            <div class="blog-post-content">
+            <h3> {{ post.content }} </h3>
+            </div>
+
+        </div>
+    <hr>
+
     
     {% endfor %}
 {%endblock content%}
