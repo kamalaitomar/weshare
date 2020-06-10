@@ -12,9 +12,31 @@
         <title>Flask Blog</title>
     {%endif%}
 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
 
 </head>
 <body>
+
+    <header>
+        <img class="logo" src="../static/images/logo.jpg" alt="weshare logo" title="We Share">
+        <nav class="nav_links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <nav class="nav_links">
+            <ul>
+                <li><a href="#">Log in</a></li>
+                <li><a href="#">Log out</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <div class="navbar">
+        <a href="#">navbar</a>
+    </div>
+    
     {% block content %}{% endblock %}
     
 </body>
