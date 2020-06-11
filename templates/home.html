@@ -1,32 +1,28 @@
 {% extends 'layout.html' %}
 {%block content%}
     {% for post in posts%}
-
-    <hr>
-        <div class="blog-post-info">
+        <article class="blog-post-info">
             <img src="https://api.adorable.io/avatars/285/abott@adorable.io.png" alt="">
 
             <div class="blog-post-authour">
-            <a href="#"><h1> {{ post.author }}</h1> </a> 
+                <h1><a href="#">{{ post.author }}</a></h1> 
             </div>
             
             <div class="blog-post-date">
-                {{ post.date_posted }}  
+                <p>{{ post.date_posted }}</p>  
             </div>
-
+            <br>
             <div class="blog-post-title">
-                <h2> {{ post.title }} </h2>
+                <h2>{{ post.title }}</h2>
             </div>
-
-            
 
             <div class="blog-post-content">
-            <h3> {{ post.content }} </h3>
+                <p>{{ post.content }}</p>
             </div>
 
-        </div>
-    <hr>
+        </article>
 
+      
     
     {% endfor %}
 {%endblock content%}
