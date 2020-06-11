@@ -96,30 +96,102 @@ header{
   
 /* side bar style*/
 
-table{
+.side-bar{
+    margin-top: 70px;
+    margin-left: 10px;
     width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 70px;  
+}
+.side-bar h1{
+    font-size: 1.5em;
+    margin: 10px 10px 30px 10px;
+    color: #0cb185;
+}
+
+.side-bar-table{
     border-collapse: collapse;
     text-align: center;
-    background-color: #b2f3e2;
-    position: sticky;
-    top: 80px;
-    margin-left: 10px;
+    background-color: rgba(207, 207, 207, 0.1);
+    width: 80%;
+    height: 70%;
 }
 
-th{
-    font-size: 1.5em;
-    padding: 10px;
-}
-
-table a{
+.side-bar-table  a{
     text-decoration: none;
+    color: black;
     font-weight: 500;
 }
 
-tr, td{
-    border: 2px solid #1dd1a1;
-    padding: 10px;
-    border-radius: 10px;
-
+.side-bar-table  a:hover{
+    color: #1dd1a1;
 }
+
+.side-bar-table tr{
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 50px
+}
+
+/* form style  */
+
+.form-group{
+    width: 500px;
+    height: 400px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-group h1{
+    font-size: 1.4em;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    color: #006e51;
+}
+
+.form-table{
+    border-collapse: collapse
+}
+
+.form-label{
+    display: block;
+    margin: 10px 20px;
+    font-size:1.2em;
+}
+
+.form-input{
+    width: 480px;
+    height: 40px;
+    margin-left: 1px;
+    padding-left: 10px;
+    border: 1px solid black;
+    border-radius: 6px;
+    font-size: 1.1em;
+}
+.form-input:focus{
+    outline: 1px solid #1dd1a1;
+    box-shadow: 0 0 0 2px #1dd1a1;
+}
+
+.form-button{
+    width: 70px;
+    height: 30px;
+    border : none;
+    border-radius: 5px;
+    background: #1dd1a1;
+    margin: 10px 5px;
+}
+
+.form-button:hover{
+    background: #1dd1a19a;
+}
+
  

@@ -3,36 +3,46 @@
 
     <form method="POST" action="">
         {{ form.hidden_tag() }}
-        <fieldset>
-            <legend> Join Us Today </legend>
-            <div class="form-section">
-                {{ form.username.label (class='form-label') }}
-                {{ form.username (class='form-input') }}
-            </div>
+        <fieldset class="form-group">
+            <h1>Join Us Today</h1>
+            <hr>
+            <table class="form-table">
+                <tr class="form-label">
+                    {{ form.username.label (class='form-label') }}
+                </tr>
+                <tr class="form-input">
+                    {{ form.username (class='form-input') }}
+                </tr> 
 
-            <div class="form-section">
-                {{ form.email.label (class='form-label') }}
-                {{ form.email (class='form-input') }}
-            </div>
+                <tr class="form-label">
+                    {{ form.email.label (class='form-label') }}
+                </tr>
+                <tr class="form-input">
+                    {{ form.email (class='form-input') }}
+                </tr> 
 
-            <div class="form-section">
-                {{ form.password.label (class='form-label') }}
-                {{ form.password (class='form-input') }}
-            </div>
+                <tr class="form-label">
+                    {{ form.password.label (class='form-label') }}
+                </tr>
+                <tr class="form-input">
+                    {{ form.password (class='form-input') }}
+                </tr>  
 
-            <div class="form-section">
-                {{ form.Confirm_password.label (class='form-label') }}
-                {{ form.Confirm_password (class='form-input') }}
-            </div>
-            
+                <tr class="form-label">
+                    {{ form.Confirm_password.label (class='form-label') }}
+                </tr>
+                <tr class="form-input">
+                    {{ form.Confirm_password (class='form-input') }}
+                </tr>                                  
+            </table>
         </fieldset>
-        
-        <div class="form-section">
-            {{ form.submit.label (class='submit_button') }}
-            {{ form.submit (class='form-input') }}
-        </div>
+                
+                <div >
+                    {{ form.submit.label (class='submit_button') }}
+                    {{ form.submit (class='form-button') }}
+                </div>
 
-
+            
     </form>
 
         <div class="already_have_acc">            
