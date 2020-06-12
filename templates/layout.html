@@ -18,7 +18,7 @@
 <body>
 
     <header>
-        <img class="logo" src="../static/images/logo.jpg" alt="weshare logo" title="We Share">
+        <a href="{{url_for('home')}}"><img class="logo" src="../static/images/logo.jpg" alt="weshare logo" title="We Share"></a>
         <nav class="nav_links">
             <ul>
                 <li><a href="{{url_for('home')}}">Home</a></li>
@@ -34,13 +34,13 @@
     </header>
     <main>
 
-        {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-            <ul class=flashes>
-                {% for message in messages %}
-                <li>{{ message }}</li>
+                {% for category, message in messages %}
+                    <div class='alert alert-{{ category }}'>
+                        {{ message }}
+                    </div>
                 {% endfor %}
-            </ul>
             {% endif %}
         {% endwith %}
 

@@ -53,7 +53,7 @@ def about():
 def register():
     form = Registration()
     if form.validate_on_submit():
-        flash(f'account created for {form.username.data}')
+        flash(f'account created for {form.username.data}', 'success')
         return redirect(url_for('home'))
     return  render_template('register.html' , title = 'Register', form = form)
     
@@ -62,11 +62,11 @@ def register():
 def login():
     form = Login()
     if form.validate_on_submit():
-        if form.email.data == 'admin@admin.com' and form.password.data == 'admin':
-            flash('You have been logged in' , 'succes-login' ) #succes-login is the flash message comment for login
+        if form.email.data == 'admin@admin.com' and form.password.data == 'admin' or form.email.data == 'admin2@admin.com' and form.password.data == '12345':
+            flash('You have been logged in', 'success-login' ) #succes-login is the flash message comment for login
             return redirect(url_for('home'))
         else:
-            flash('Login Unsuccessful. Please Check Your Informations ' ,'error') #error is the flash message comment
+            flash('Login Unsuccessful. Please Check Your Informations ', 'error') #error is the flash message comment
 
     return  render_template('login.html' , title = 'login', form = form)
 
