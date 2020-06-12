@@ -8,3 +8,7 @@ Some Packages to install
 pip install email_validator
 
 pip install Flask-Validator
+
+Login informations for testing :
+    Email : admin@admin.com
+    Password : admin
