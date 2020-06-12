@@ -21,26 +21,34 @@
         <img class="logo" src="../static/images/logo.jpg" alt="weshare logo" title="We Share">
         <nav class="nav_links">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="{{url_for('home')}}">Home</a></li>
+                <li><a href="{{url_for('about')}}">About</a></li>
             </ul>
         </nav>
         <nav class="nav_links">
             <ul>
-                <li><a href="#">Log in</a></li>
-                <li><a href="#">Log out</a></li>
+                <li><a href="{{url_for('login')}}">Login</a>  </li>
+                <li><a href="{{url_for('register')}}">Register</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        {%  %}
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+
         {% block content %}{% endblock %}
     </main>
-    <div>
-        <table >
-            <tr>
-              <th>Side bar</th>
-            </tr>
+    <div class="side-bar">
+        <h1>Side bar</h1>
+        <table class="side-bar-table">
             <tr>
               <td><a href="#">Latest Post</a></td>
             </tr>
@@ -53,7 +61,7 @@
             <tr>
                 <td><a href="#">Latest Post</a></td>
             </tr>
-          </table>
+        </table>
     </div>
     
 </body>
