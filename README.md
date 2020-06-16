@@ -12,6 +12,9 @@ pip install Flask-Validator
 Login informations for testing :
     Email : admin@admin.com
     Password : admin
+        or
+    Email : admin2@admin.com   
+    Password : 12345
     
     
-pip install flask-alchemy
+pip install flask-sqlalchemy
