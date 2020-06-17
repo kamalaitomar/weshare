@@ -26,10 +26,17 @@
             </ul>
         </nav>
         <nav class="nav_links">
+            {% if current_user.is_authenticated %}
             <ul>
-                <li><a href="{{url_for('login')}}">Login</a>  </li>
-                <li><a href="{{url_for('register')}}">Register</a></li>
+                <li><a href="{{url_for('account')}}">account</a></li>
+                <li><a href="{{url_for('logout')}}">Logout</a></li>
             </ul>
+            {% else %}
+                <ul>
+                    <li><a href="{{url_for('login')}}">Login</a></li>
+                    <li><a href="{{url_for('register')}}">Register</a></li>
+                </ul>
+            {% endif %}
         </nav>
     </header>
     <main>
