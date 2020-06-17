@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+{%block content%}
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <h1>Join Us Today</h1>
+            <hr>
+            <table class="form-table">
+                <tr class="form-label">
+                    {{ form.username.label (class='form-label') }}
+                </tr> 
+                <tr class="form-input">
+                    {% if form.username.errors %}
+                        {{ form.username (class='form-input is-invalide') }}
+                        <div class="invalide-feedback">
+                            {% for error in form.username.errors %}
+                                <spane>{{ error }}</spane>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username (class='form-input') }}
+                    {% endif %}
+                 </tr>
+            
+                <tr class="form-label">
+                    {{ form.email.label (class='form-label') }}
+                </tr>
+                <tr class="form-input">
+                    {% if form.email.errors %}
+                        {{ form.email (class='form-input is-invalide') }}
+                        <div class="invalide-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email (class='form-input') }}
+                    {% endif %} 
+                </tr>
+
+                <tr class="form-label">
+                    {{ form.password.label (class='form-label') }}
+                </tr>
+                <tr class="form-input">
+                    {% if form.password.errors %}
+                        {{ form.password (class='form-input is-invalide') }}
+                        <div class="invalide-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password (class='form-input') }}
+                    {% endif %}  
+                </tr>
+            
+                <tr class="form-label">
+                    {{ form.Confirm_password.label (class='form-label') }}
+                </tr>
+                <tr class="form-input"></tr>
+                    {% if form.Confirm_password.errors %}
+                        {{ form.Confirm_password (class='form-input is-invalide') }}
+                        <div class="invalide-feedback">
+                            {% for error in form.Confirm_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.Confirm_password (class='form-input') }}
+                    {% endif %}  
+                </tr>                          
+                <tr >
+                    {{ form.submit (class='form-button') }}
+                </tr>
+            </table>
+        </fieldset> 
+    </form>
+
+        <div>            
+            <small>Already Have an account ?</small>
+            <a href="{{ url_for('login') }}" class="sign-in"> Sign In</a>
+        </div>
+
+{%endblock content%}
+
+   
