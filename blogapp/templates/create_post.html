@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{%block content%}
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group-login">
+            <h1>{{legend}}</h1>
+            <hr>
+            <table class="form-table">
+                <tr class="form-label">
+                    {{ form.title.label (class='form-label') }}
+                </tr>
+                <tr>
+                    {% if form.title.errors %}
+                        {{ form.title (class='form-input is-invalide') }}
+                        <div class="invalide-feedback">
+                            {% for error in form.title.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.title (class='form-input') }}
+                    {% endif %}
+                </tr> 
+
+                <tr>
+                    {{ form.content.label (class='form-label') }}
+                </tr>
+                <tr>
+                    {{ form.content (class='content-input') }}
+                </tr>  
+                
+                <tr>
+                    <div>
+                        {{ form.submit (class='form-button') }}
+                    </div>
+                </tr>
+            </table>
+        </fieldset>    
+    </form>
+{%endblock content%}
+
+   

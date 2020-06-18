@@ -2,15 +2,19 @@
 {%block content%}
     
     <div class="user-info">
-        <img src="{{ image_file }}" class="user-image">
-        <div class="media-body">
-            <h2 class="account-heading">{{ current_user.username }}</h2>
-            <p class="user-email">{{ current_user.email }}</p>
-        </div>
+       <div class="media">
+            <div class="account-img">
+                <img class="account-img" src="{{image_file}}" alt="profile image">
+            </div>
+            <div class="media-body">
+                <h2 class="account-heading">{{ current_user.username }}</h2>
+                <p class="text-secondary">{{ current_user.email }}</p>
+            </div>
+       </div>
 
         <form method="POST" action="" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
-            <fieldset class="form-group">
+            <div class="account-group">
                 <h1>Account info</h1>
                 <hr>
                 <table class="form-table">
@@ -28,7 +32,7 @@
                         {% else %}
                             {{ form.username (class='form-input') }}
                         {% endif %}
-                     </tr>
+                    </tr>
                 
                     <tr class="form-label">
                         {{ form.email.label (class='form-label') }}
@@ -44,27 +48,30 @@
                         {% else %}
                             {{ form.email (class='form-input') }}
                         {% endif %} 
-                    </tr>
-                    
-                    <tr class="form-label">
+                    </tr><br>
+    
+                    <tr >
                         {{ form.picture.label (class='form-control-file') }}
                     </tr>
                     <tr>
-                        {{ form.picture(class="form-control-file") }}
-                    </tr>
-                    <tr>
-                    {% if form.picture.errors %}
-                        {% for error in form.picture.errors %}
-                            <span class="text-danger">{{ error }}</span></br>
-                        {% endfor %}
-                    {% endif %}
-                    </tr>
+                        {% if form.picture.errors %}
+                            {% for error in form.picture.errors %}
+                            <div class="invalide-feedback">
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            {{ form.picture(class="form-control-file") }}   
+                        {% endif %}
+                    </tr><br>
                     
                     <tr >
                         {{ form.submit (class='form-button') }}
                     </tr>
                 </table>
-            </fieldset> 
+            </div>
         </form>
 
     </div>

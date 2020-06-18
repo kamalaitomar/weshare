@@ -12,7 +12,7 @@
         <title>Flask Blog</title>
     {%endif%}
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 <body>
@@ -28,8 +28,10 @@
         <nav class="nav_links">
             {% if current_user.is_authenticated %}
             <ul>
+                <li><a href="{{url_for('new_post')}}">New Post</a></li>
                 <li><a href="{{url_for('account')}}">account</a></li>
                 <li><a href="{{url_for('logout')}}">Logout</a></li>
+                
             </ul>
             {% else %}
                 <ul>
