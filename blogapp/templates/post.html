@@ -5,13 +5,13 @@
             <img src="{{ url_for('static' , filename='profil_pics/'+ post.author.image_file) }}" alt="">
 
             <div class="blog-post-authour">
-                <h1><a href="#">{{ post.author.username }}</a></h1> 
+                <h1><a href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.author.username }}</a></h1> 
             </div>
             
             <div class="blog-post-date">
                 <p>{{ post.date_posted.strftime('%Y-%m-%d') }}</p>  
             </div>
-            <br>
+    
             {% if post.author == current_user %}
                 <div class="post-buttons">
                     
@@ -23,9 +23,8 @@
                     
                 </div>
             {% endif %}
-            <br>
             <div class="post-infos">
-                <div class="blog-post-title">
+                <div class="single-post-title">
                     <h2>{{ post.title }}</h2>
                 </div>
 
