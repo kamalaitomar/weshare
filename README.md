@@ -23,3 +23,5 @@ pip install flask-sqlalchemy
 pip install flask-bcrypt
 
 pip install Pillow
+
+pip install flask-mail
