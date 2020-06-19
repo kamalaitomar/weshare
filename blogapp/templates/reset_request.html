@@ -4,7 +4,7 @@
     <form method="POST" action="">
         {{ form.hidden_tag() }}
         <fieldset class="form-group-login">
-            <h1>Login</h1>
+            <h1>Reset Password</h1>
             <hr>
             <table class="form-table">
                 <tr class="form-label">
@@ -23,40 +23,15 @@
                     {% endif %}
                 </tr> 
 
-                <tr>
-                    {{ form.password.label (class='form-label') }}
-                </tr>
-                <tr>
-                    {{ form.password (class='form-input') }}
-                </tr>  
-
-                <tr>
-                    <div class="form-check">
-                        {{ form.remember (class='remember-me') }}
-                        {{ form.remember.label (class='remember-me-label') }}
-                    </div>
-                </tr>
-                <tr>
-                    <a href="{{url_for('reset_request')}}" class="Password-Reset">Forgot Password ?</a>
-                </tr>
                 
                 <tr>
                     <div>
-                        {{ form.submit (class='form-button') }}
+                        {{ form.submit (class='Request-Password-Reset') }}
                     </div>
                 </tr>
             </table>
         </fieldset>    
     </form>
-
-        <div >            
-            <small>You don't have  account ?</small>
-            <a href="{{ url_for('register') }}" class="sign-up-now">Sign up now</a>
-        </div>
-
-
-
-
 
 {%endblock content%}
 

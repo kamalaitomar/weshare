@@ -462,4 +462,17 @@ header{
     margin-top: 10px;
 }
 
+/* Reset password proprieties */
 
+.Request-Password-Reset{
+    width: 170px;
+    height: 40px;
+    border : none;
+    border-radius: 5px;
+    background: #1dd1a1;
+    margin: 10px 15px;
+
+}
+.Request-Password-Reset:hover{
+    background: #1dd1a19a;
+}

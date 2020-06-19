@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{%block content%}
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group-login">
+            <h1>Reset Password</h1>
+            <hr>
+            <!--Password Enter-->
+            <table class="form-table">
+                <tr class="form-label">
+                    {{ form.password.label (class='form-label') }}
+                </tr>
+                <tr>
+                    {% if form.password.errors %}
+                        {{ form.password (class='form-input is-invalide') }}
+                        <div class="invalide-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password (class='form-input') }}
+                    {% endif %}
+                </tr> 
+                <!--Confirm Password-->
+                <tr class="form-label">
+                    {{ form.Confirm_password.label (class='form-label') }}
+                </tr>
+                <tr>
+                    {% if form.Confirm_password.errors %}
+                        {{ form.Confirm_password (class='form-input is-invalide') }}
+                        <div class="invalide-feedback">
+                            {% for error in form.Confirm_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.Confirm_password (class='form-input') }}
+                    {% endif %}
+                </tr> 
+
+                
+                <tr>
+                    <div>
+                        {{ form.submit (class='Request-Password-Reset') }}
+                    </div>
+                </tr>
+            </table>
+        </fieldset>    
+    </form>
+
+{%endblock content%}
+
+   
