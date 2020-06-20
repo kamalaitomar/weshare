@@ -18,25 +18,25 @@
 <body>
 
     <header>
-        <a href="{{url_for('home')}}"><img class="logo" src="../static/images/logo.jpg" alt="weshare logo" title="We Share"></a>
+        <a href="{{url_for('main.home')}}"><img class="logo" src="../static/images/logo.jpg" alt="weshare logo" title="We Share"></a>
         <nav class="nav_links">
             <ul>
-                <li><a href="{{url_for('home')}}">Home</a></li>
-                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('main.home')}}">Home</a></li>
+                <li><a href="{{url_for('main.about')}}">About</a></li>
             </ul>
         </nav>
         <nav class="nav_links">
             {% if current_user.is_authenticated %}
             <ul>
-                <li><a href="{{url_for('new_post')}}">New Post</a></li>
-                <li><a href="{{url_for('account')}}">account</a></li>
-                <li><a href="{{url_for('logout')}}">Logout</a></li>
+                <li><a href="{{url_for('posts.new_post')}}">New Post</a></li>
+                <li><a href="{{url_for('users.account')}}">account</a></li>
+                <li><a href="{{url_for('users.logout')}}">Logout</a></li>
                 
             </ul>
             {% else %}
                 <ul>
-                    <li><a href="{{url_for('login')}}">Login</a></li>
-                    <li><a href="{{url_for('register')}}">Register</a></li>
+                    <li><a href="{{url_for('users.login')}}">Login</a></li>
+                    <li><a href="{{url_for('users.register')}}">Register</a></li>
                 </ul>
             {% endif %}
         </nav>
