@@ -110,6 +110,35 @@ def new_post():
         return redirect(url_for('home'))
     return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
 
+
+
+@app.route('/academic')
+def academic():
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.filter_by(category = 'Academic').paginate(page=page, per_page=2)
+    return  render_template('academic.html' , posts = posts)
+
+
+@app.route('/post/academic', methods=['GET', 'POST'])
+@login_required
+def academicpost():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(title = form.title.data , content = form.content.data , author = current_user,
+                    category=form.category.data)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created', 'success' )
+        return redirect(url_for('academic'))
+    return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
+
+
+
+
+
+
+
+
 @app.route('/post/<int:post_id>')
 def post(post_id):
     post = Post.query.get_or_404(post_id)
