@@ -75,7 +75,7 @@ header{
    
 }
 
-.blog-post-info img {
+.author-post-img {
     width: 40px;
     height: 40px;
     float: left;
@@ -475,4 +475,64 @@ header{
 }
 .Request-Password-Reset:hover{
     background: #1dd1a19a;
+}
+
+/* comments styles */
+
+.comments-box{
+    border:1px solid rgba(0, 0, 0, 0.5);
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.add-comment{
+    margin-bottom: 10px;
+}
+
+
+.comment-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+
+.comment-field{
+    background-color: #f2f3f5;
+    border:1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 500px;
+    height: 30px;
+}
+
+.comment-btn{
+    background-color: #1dd1a1;
+    margin-left: 5px;
+    width: 40px;
+    height: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+}
+
+.comments{
+    margin-left: 20px;
+
+}
+
+.comment{
+    background-color: #f2f3f5;
+    margin: 10px;
+    margin-left: 40px;
+    padding: 5px;
+    border:1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;  
+}
+
+.comment-date{
+    font-size: 13px;
+    margin: 5px;
+    text-align: right;
 }
