@@ -536,3 +536,33 @@ header{
     margin: 5px;
     text-align: right;
 }
+
+.unlogin{
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#login-btn{
+    text-decoration: none;
+    color: #1dd1a1;
+    font-size: 17px;
+    font-weight: 500;
+    border: 1px solid #1dd1a1;
+    border-radius: 4px;
+    padding: 2px 15px;
+
+}
+
+#register-btn{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    background-color: #1dd1a1;
+    border: 1px solid #1dd1a1;
+    border-radius: 4px;
+    padding: 2px 12px;
+}

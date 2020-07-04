@@ -33,35 +33,59 @@
                 </div>
             </div>
             <div class="comments-box">
-                <div class="add-comment">
-                    <img class="comment-img" src="{{url_for('static' , filename='profil_pics/'+ current_user.image_file) }}" alt="profile image">
-                    <form method="POST" action="">
-                        {{ form.hidden_tag() }}
-                        {% if form.body.errors %}
-                            {{ form.body}}
-                            <div class="invalid-feedback">
-                                {% for error in form.body.errors %}
-                                    <span>{{ error }}</span>
-                                {% endfor %}
-                            </div>
-                        {% else %}
-                            {{ form.body(class="comment-field") }}
+                {% if current_user.is_authenticated %}
+                    <div class="add-comment">
+                        <form method="POST" action="">
+                            {{ form.hidden_tag() }}
+                            {% if form.body.errors %}
+                                {{ form.body}}
+                                <div class="invalid-feedback">
+                                    {% for error in form.body.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <img class="comment-img" src="{{url_for('static' , filename='profil_pics/'+ current_user.image_file) }}" alt="profile image">   
+                                {{ form.body(class="comment-field") }}
+                            {% endif %}
+                            {{ form.submit(class="comment-btn") }}
+                        </form>
+                    </div>
+                    <div class="comments">
+                        {% if post.post_comments %}
+                        {% if post.post_comments.count() > 0 %}
+                            {% for comment in post.post_comments %}
+                            <img src="{{ url_for('static' , filename='profil_pics/'+ comment.owner.image_file) }}" alt="user image" class="comment-img">
+                                <div class="comment">
+                                    <p class="comment-body">{{ comment.body }}</p>
+                                    <p class="comment-date">{{ comment.date_posted.strftime('%Y-%m-%d') }}</p> 
+                                </div>                      
+                            {% endfor %}
                         {% endif %}
-                        {{ form.submit(class="comment-btn") }}
-                    </form>
-                </div>
-                <div class="comments">
-                    {% if post.comments %}
-                    {% if post.comments.count() > 0 %}
-                        {% for comment in post.comments %}
-                            <div class="comment">
-                                <p class="comment-body">{{ comment.body }}</p>
-                                <p class="comment-date">{{ comment.date_posted.strftime('%Y-%m-%d') }}</p> 
-                            </div>                      
-                        {% endfor %}
-                    {% endif %}
-                    {% endif %}
-                </div>
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <div class="unlogin">
+                        <p>Log in or sign up to leave a comment : </p>
+                        <span>
+                            <a href="{{url_for('login')}}" id="login-btn">LOGIN</a>
+                            <a href="{{url_for('register')}}" id="register-btn">SING UP</a>
+                        </span>
+                    </div>
+                    <div class="comments">
+                        {% if post.post_comments %}
+                        {% if post.post_comments.count() > 0 %}
+                            {% for comment in post.post_comments %}
+                            <img src="{{ url_for('static' , filename='profil_pics/'+ comment.owner.image_file) }}" alt="user image" class="comment-img">
+                                <div class="comment">
+                                    <p class="comment-body">{{ comment.body }}</p>
+                                    <p class="comment-date">{{ comment.date_posted.strftime('%Y-%m-%d') }}</p> 
+                                </div>                      
+                            {% endfor %}
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                {% endif %}
             </div>
         </article>
 
