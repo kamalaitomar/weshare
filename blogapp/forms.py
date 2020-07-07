@@ -65,7 +65,7 @@ class PostForm(FlaskForm):
     title = StringField('title' , validators=[DataRequired()])
     content = TextAreaField('Content' , validators=[DataRequired()])
     category = SelectField('Category', validators=[DataRequired()], choices=[(
-        'Academic', 'Academic'), ('Art', 'Art')])
+        'Academic', 'Academic'), ('technology', 'technology'), ('sport', 'sport'), ('travel', 'travel'), ('gaming', 'gaming'), ('animals', 'animals')])
     submit = SubmitField('Post')
 
 

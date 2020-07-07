@@ -111,11 +111,12 @@ def new_post():
     return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
 
 
-
+#----------------------------------- Categories--------------------------------------------
 @app.route('/academic')
 def academic():
     page = request.args.get('page', 1, type=int)
-    posts = Post.query.filter_by(category = 'Academic').paginate(page=page, per_page=2)
+    posts = Post.query.filter_by(category = 'Academic').paginate(page=page, per_page=7) 
+    
     return  render_template('academic.html' , posts = posts)
 
 
@@ -131,6 +132,114 @@ def academicpost():
         flash('Your post has been created', 'success' )
         return redirect(url_for('academic'))
     return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
+
+
+
+@app.route('/technology')
+def technology():
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.filter_by(category = 'technology').paginate(page=page, per_page=7)
+    return  render_template('technology.html' , posts = posts)
+
+
+@app.route('/post/technology', methods=['GET', 'POST'])
+@login_required
+def technologypost():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(title = form.title.data , content = form.content.data , author = current_user,
+                    category=form.category.data)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created', 'success' )
+        return redirect(url_for('technology'))
+    return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
+
+
+@app.route('/sport')
+def sport():
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.filter_by(category = 'sport').paginate(page=page, per_page=7)
+    return  render_template('sport.html' , posts = posts)
+
+
+@app.route('/post/sport', methods=['GET', 'POST'])
+@login_required
+def sportpost():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(title = form.title.data , content = form.content.data , author = current_user,
+                    category=form.category.data)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created', 'success' )
+        return redirect(url_for('sport'))
+    return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
+
+
+
+@app.route('/travel')
+def travel():
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.filter_by(category = 'travel').paginate(page=page, per_page=7)
+    return  render_template('travel.html' , posts = posts)
+
+
+@app.route('/post/travel', methods=['GET', 'POST'])
+@login_required
+def travelpost():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(title = form.title.data , content = form.content.data , author = current_user,
+                    category=form.category.data)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created', 'success' )
+        return redirect(url_for('travel'))
+    return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
+
+
+@app.route('/gaming')
+def gaming():
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.filter_by(category = 'gaming').paginate(page=page, per_page=7)
+    return  render_template('gaming.html' , posts = posts)
+
+
+@app.route('/post/gaming', methods=['GET', 'POST'])
+@login_required
+def gamingpost():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(title = form.title.data , content = form.content.data , author = current_user,
+                    category=form.category.data)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created', 'success' )
+        return redirect(url_for('gaming'))
+    return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
+
+
+@app.route('/animals')
+def animals():
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.filter_by(category = 'animals').paginate(page=page, per_page=7)
+    return  render_template('animals.html' , posts = posts)
+
+
+@app.route('/post/animals', methods=['GET', 'POST'])
+@login_required
+def animalspost():
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(title = form.title.data , content = form.content.data , author = current_user,
+                    category=form.category.data)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created', 'success' )
+        return redirect(url_for('animals'))
+    return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
+
 
 
 
