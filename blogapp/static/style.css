@@ -136,7 +136,7 @@ header{
 
 /* side bar style*/
 
-.side-bar{
+/* .side-bar{
     margin-top: 70px;
     margin-left: 10px;
     width: 300px;
@@ -178,7 +178,7 @@ header{
     border: 1px solid rgba(0, 0, 0, 0.6);
     padding: 10px;
     border-radius: 50px
-}
+} */
 
 /* register form style  */
 
@@ -227,6 +227,7 @@ header{
     border : none;
     border-radius: 5px;
     background: #1dd1a1;
+    color: #ffffff;
     margin: 10px 15px;
 }
 
@@ -347,23 +348,35 @@ header{
 
 .user-info{
     margin: 10px;
-    padding: 10px;
     width: 700px;
-    height: 550px;
+    height: 400px;
     background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .media{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1dd1a1;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px;
+    height: 380px;
+
+
 }
 
-.account-img{
+.account-img img{
     display: inline-block;
     width: 150px;
     height: 150px;
+    border: 5px solid white;
     border-radius: 50%;
 
     background-repeat: no-repeat;
@@ -372,11 +385,12 @@ header{
 
 
 .media-body{
+    color: white;
     padding: 10px;
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
 
 .account-heading{
@@ -384,12 +398,39 @@ header{
 }
 
 .account-group{
-    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+   
+}
+
+.Account-info{
+    color: #1dd1a1;
+    margin: 10px;
+}
+.line{
+    width: 90%;
+    margin-top: 10px;
 }
 
 .form-control-file{
     padding-top: 10px;
 
+}
+
+/* user posts styles */
+
+.user-posts-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1dd1a1;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px;
+    height: 250px;
 }
 /* New Post */
 

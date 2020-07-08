@@ -57,7 +57,7 @@
                             {% for comment in post.post_comments %}
                             <img src="{{ url_for('static' , filename='profil_pics/'+ comment.owner.image_file) }}" alt="user image" class="comment-img">
                                 <div class="comment">
-                                    <h3> {{ current_user.username }}</h3>
+                                    <h3> {{ comment.owner.username }}</h3>
                                     <p class="comment-body">{{ comment.body }}</p>
                                     <p class="comment-date">{{ comment.date_posted.strftime('%Y-%m-%d') }}</p> 
                                 </div>                      
@@ -79,6 +79,7 @@
                             {% for comment in post.post_comments %}
                             <img src="{{ url_for('static' , filename='profil_pics/'+ comment.owner.image_file) }}" alt="user image" class="comment-img">
                                 <div class="comment">
+                                    <h3> {{ comment.owner.username }}</h3>
                                     <p class="comment-body">{{ comment.body }}</p>
                                     <p class="comment-date">{{ comment.date_posted.strftime('%Y-%m-%d') }}</p> 
                                 </div>                      

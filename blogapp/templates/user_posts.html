@@ -1,9 +1,20 @@
 {% extends 'layout.html' %}
 {%block content%}
-<h1 class="user-post-title">Posts by {{ user.username }} ({{ posts.total }})</h1>
+<div class="user-posts-header">
+    <div class="upper-container">
+        <div class="account-img">
+            <img  src="{{ url_for('static' , filename='profil_pics/'+ user.image_file) }}" alt="profile image">
+        </div>
+    </div>    
+        <div class="media-body">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <p class="text-secondary">{{ user.email }}</p>
+        </div>  
+</div>
+<!-- <h1 class="user-post-title">Posts by {{ user.username }} ({{ posts.total }})</h1> -->
     {% for post in posts.items %}
         <article class="blog-post-info">
-            <img src="{{ url_for('static' , filename='profil_pics/'+ post.author.image_file) }}" alt="">
+            <img src="{{ url_for('static' , filename='profil_pics/'+ post.author.image_file) }}" alt="user image" class="author-post-img">
 
             <div class="blog-post-authour">
                 <h1><a href="{{ url_for('user_posts', username=post.author.username) }}">{{ post.author.username }}</a></h1> 
