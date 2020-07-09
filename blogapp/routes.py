@@ -13,6 +13,10 @@ from flask_mail import Message
 @app.route('/')
 @app.route('/home')
 def home():
+    return  render_template('main.html' , title = 'WeShare')
+
+@app.route('/all')
+def all():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=7)
     return  render_template('home.html' , posts = posts)
@@ -103,11 +107,12 @@ def account():
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(title = form.title.data , content = form.content.data , author = current_user)
+        post = Post(title = form.title.data , content = form.content.data , author = current_user,
+                    category=form.category.data)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created', 'success' )
-        return redirect(url_for('home'))
+        return redirect(url_for('all'))
     return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
 
 
@@ -117,7 +122,7 @@ def academic():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.filter_by(category = 'Academic').paginate(page=page, per_page=7) 
     
-    return  render_template('academic.html' , posts = posts)
+    return  render_template('home.html' , posts = posts , category = 'academic')
 
 
 @app.route('/post/academic', methods=['GET', 'POST'])
@@ -130,7 +135,7 @@ def academicpost():
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created', 'success' )
-        return redirect(url_for('academic'))
+        return redirect(url_for('all'))
     return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
 
 
@@ -139,7 +144,7 @@ def academicpost():
 def technology():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.filter_by(category = 'technology').paginate(page=page, per_page=7)
-    return  render_template('technology.html' , posts = posts)
+    return  render_template('home.html' , posts = posts)
 
 
 @app.route('/post/technology', methods=['GET', 'POST'])
@@ -152,7 +157,7 @@ def technologypost():
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created', 'success' )
-        return redirect(url_for('technology'))
+        return redirect(url_for('all'))
     return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
 
 
@@ -160,7 +165,7 @@ def technologypost():
 def sport():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.filter_by(category = 'sport').paginate(page=page, per_page=7)
-    return  render_template('sport.html' , posts = posts)
+    return  render_template('home.html' , posts = posts)
 
 
 @app.route('/post/sport', methods=['GET', 'POST'])
@@ -173,7 +178,7 @@ def sportpost():
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created', 'success' )
-        return redirect(url_for('sport'))
+        return redirect(url_for('all'))
     return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
 
 
@@ -182,7 +187,7 @@ def sportpost():
 def travel():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.filter_by(category = 'travel').paginate(page=page, per_page=7)
-    return  render_template('travel.html' , posts = posts)
+    return  render_template('home.html' , posts = posts)
 
 
 @app.route('/post/travel', methods=['GET', 'POST'])
@@ -195,7 +200,7 @@ def travelpost():
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created', 'success' )
-        return redirect(url_for('travel'))
+        return redirect(url_for('all'))
     return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
 
 
@@ -203,7 +208,7 @@ def travelpost():
 def gaming():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.filter_by(category = 'gaming').paginate(page=page, per_page=7)
-    return  render_template('gaming.html' , posts = posts)
+    return  render_template('home.html' , posts = posts)
 
 
 @app.route('/post/gaming', methods=['GET', 'POST'])
@@ -216,7 +221,7 @@ def gamingpost():
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created', 'success' )
-        return redirect(url_for('gaming'))
+        return redirect(url_for('all'))
     return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
 
 
@@ -224,7 +229,7 @@ def gamingpost():
 def animals():
     page = request.args.get('page', 1, type=int)
     posts = Post.query.filter_by(category = 'animals').paginate(page=page, per_page=7)
-    return  render_template('animals.html' , posts = posts)
+    return  render_template('home.html' , posts = posts)
 
 
 @app.route('/post/animals', methods=['GET', 'POST'])
@@ -237,10 +242,11 @@ def animalspost():
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created', 'success' )
-        return redirect(url_for('animals'))
+        return redirect(url_for('all'))
     return  render_template('create_post.html' , title = 'New Post' , form = form, legend = 'New Post')
 
 
+#-----------------------------------------------------------------------------------------------------------
 
 
 @app.route('/post/<int:post_id>', methods=['GET', 'POST'])

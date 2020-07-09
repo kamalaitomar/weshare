@@ -1,6 +1,6 @@
 /* global styles */
 *{
-    font-family: 'Roboto' , sans-serif;
+    font-family: 'Source Sans Pro' , sans-serif;
     box-sizing: border-box;
     margin : 0;
     padding: 0;
@@ -18,7 +18,7 @@ body{
 }
 
 main{
-    margin-top: 60px;
+    margin-top: 120px;
 }
 
 /* navigation bar styles */
@@ -606,4 +606,337 @@ header{
     border: 1px solid #1dd1a1;
     border-radius: 4px;
     padding: 2px 12px;
+}
+
+
+
+
+/*-----------------------------------------------New UI------------------------------------------------------*/
+
+html , body{
+    background-color: #fff ;
+    font-family: 'Source Sans Pro' , sans-serif;
+    overflow-x: hidden !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+*{
+    text-decoration: none !important;
+}
+
+.nav{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px 0 25px;
+    background-color: #fff ;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.10);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px ;
+}
+
+.nav .links a {
+    margin-left: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.nav .links .mainlink{
+    color: #e0501b;
+}
+
+.nav h4{
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+/* Landing Css */
+
+.landing{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10vw 0 10vw;
+    height: 90vh;
+
+}
+
+.landingText h1{
+    font-size: 6vw;
+    margin: 0 !important;
+}
+.landingText h3{
+    margin: 6px !important;
+    font-size: 20px;
+    opacity: 0.3;
+    line-height: 30px;
+}
+.landingText .btn{
+    width: 120px;
+    margin-top: 30px;
+    font-size: 1.2vw;
+    padding: 14px 20px 14px 20px ;
+    background-color: #1dd1a1 ;
+    border-radius: 45px;
+    text-align: center;
+}
+.landingText .btn a {
+    font-size: 1.2vw;
+    color: #fff;
+}
+
+.landingImage img{
+    width: 28vw;
+}
+/* INFO_SECTION CSS */
+
+.infoSection{
+    height: 500px;
+}
+.infoheader{
+    text-align: center;
+    margin-bottom: 0px;
+}
+.infoheader h1{
+    margin-top: 0;
+}
+.infoCards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0 80px 0;
+}
+.infoCards .card{
+    position: relative;
+    height: 360px;
+    width: 350px;
+    background: #fff;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.09) , 0 10px 10px rgba(0, 0, 0, 0.09) ;
+}
+.infoCards .one .cardoneImg{
+    width: 180px;
+    position: absolute;
+    top: -10px;
+    right: 0px;
+}
+
+.infoCards .two .cardtwoImg{
+    width: 158px;
+    position: absolute;
+    top: -5px;
+    right: 0px;
+}
+
+.infoCards .three .cardthreeImg{
+    width: 148px;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+}
+
+.infoCards .four .cardfourImg{
+    width: 148px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.infoCards .five .cardfiveImg{
+    width: 148px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.infoCards .six .cardsixImg{
+    width: 148px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.cardbgone{
+    height: 150px;
+    background-color: #ffce63;
+}
+
+.cardbgtwo{
+    height: 150px;
+    background-color: #1dd1a1;
+}
+
+.cardbgthree{
+    height: 150px;
+    background-color: #ffce63;
+}
+.cardbgfour{
+    height: 150px;
+    background-color: #1dd1a1;
+}.cardbgfive{
+    height: 150px;
+    background-color: #ffce63;
+}
+.cardbgsix{
+    height: 150px;
+    background-color: #1dd1a1;
+}
+
+.cardContent{
+    padding: 0;
+}
+
+.cardContent h2{
+    font-weight: 600;
+    
+    margin: 15px 0 10px 7px;
+}
+
+.cardContent p{
+    line-height: 30px;
+    opacity: 0.6 ;
+    margin-left: 5px;
+}
+
+.cardContent .cardBtn{
+    position: absolute;
+    right: 20px;
+    padding: 10px;
+    background-color: #ededed;
+    width: 45px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out 0.2s;
+}
+
+.cardContent .cardBtn:hover{
+     background-color: #2f8be0;
+}
+
+.cardContent .cardBtn .cardIcon{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 16px;
+}
+
+/* FOOTER CSS */
+
+.footer{
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    background-color: #ffce63;
+}
+
+.footer h2{
+    margin: 10px;
+}
+
+.footerlinks a{
+    margin: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.footerlinks .mainlink{
+    color: #e0501b;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 600px){
+
+.nav{
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    height: auto;
+    overflow-y: hidden;
+}
+
+.nav h4{
+    font-size: 6vw;
+    margin-top: 10px ;
+    margin-bottom: 14px;
+}
+
+.nav .links a{
+    margin-right: 25px;
+    font-size: 12px;
+    font-weight: 600px;
+}
+
+/* LANDING PAGE */
+
+.landing{
+    flex-direction: column-reverse;
+    height: 750px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.landingText h1{
+    font-size: 6vw;
+    margin: 0 !important;
+}
+
+.landingText h3{
+    font-size: 16px;
+}
+
+.landingText .btn{
+    margin: 0 auto ;
+}
+.landingText .btn{
+    margin-top: 40px ;
+}
+
+.landingText .btn a{
+    font-size: 3vw;
+}
+
+.landingImage img{
+    width: 52vw;
+    margin-bottom: 20px;
+}
+
+.infoSection{
+    height: auto;
+}
+.infoheader{
+    text-align: center;
+    margin: 40px 0;
+}
+.infoCards{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.infoCards .card{
+    margin-bottom: 60px;
+}
+.footer{
+    padding-bottom: 40px;
+}
+
 }

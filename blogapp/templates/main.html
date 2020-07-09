@@ -1,0 +1,135 @@
+{% extends 'layout.html' %}
+{%block content%}
+    
+
+
+    
+        <!--LANDING PAGE-->
+        <div class="landing">
+            <div class="landingText">
+                <h1>Sharing Is <span style="color:#e0501b; font-size: 6vw;">Caring.</span></h1>
+                <h3>Let us go together, The way is difficult. Let us help each other, The way is joyful. <br> Let us share it, The way is ours alone .</h3>
+                <div class="btn">
+                    <a href="{{url_for('all')}}">Go To Blog</a>
+                </div>
+            </div>
+            <div class="landingImage">
+                <img src="../static/images/landing.png" alt="landingImage">
+            </div>
+        </div>
+        <!--INFO SECTION-->
+        <div class="infoSection">
+            <div class="infoheader">
+                <h1>Share information within different fields</h1>
+            </div>
+            <div class="infoCards">
+                <div class="card one">
+                    <img src="../static/images/Programming.png" class="cardoneImg" alt="Programming">
+                    <div class="cardbgone"></div>
+                    <div class="cardContent">
+                        <h2>Technology</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius odit sequi</p>
+                        <a href="{{url_for('technology')}}">
+                            <div class="cardBtn">
+                                <img src="../static/images/next.png" class="cardIcon" alt="cardIcon">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card two">
+                    <img src="../static/images/sport.png" class="cardtwoImg" alt="Sport">
+                    <div class="cardbgtwo"></div>
+                    <div class="cardContent">
+                        <h2>Sport</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius odit sequi</p>
+                        <a href="{{url_for('sport')}}">
+                            <div class="cardBtn">
+                                <img src="../static/images/next.png" class="cardIcon" alt="cardIcon">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card three">
+                    <img src="../static/images/travel.png" class="cardthreeImg" alt="Travel">
+                    <div class="cardbgthree"></div>
+                    <div class="cardContent">
+                        <h2>Travel</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius odit sequi</p>
+                        <a href="{{url_for('travel')}}">
+                            <div class="cardBtn">
+                                <img src="../static/images/next.png" class="cardIcon" alt="cardIcon">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+                
+            </div>
+        </div>
+
+        <!---------------------------------------------------------------------->
+        
+        <div class="infoCards">
+            <div class="card four">
+                <img src="../static/images/gaming.png" class="cardfourImg" alt="gaming">
+                <div class="cardbgfour"></div>
+                <div class="cardContent">
+                    <h2>Gaming</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius odit sequi</p>
+                    <a href="{{url_for('gaming')}}">
+                        <div class="cardBtn">
+                            <img src="../static/images/next.png" class="cardIcon" alt="cardIcon">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card five">
+                <img src="../static/images/animals.png" class="cardfiveImg" alt="Animals">
+                <div class="cardbgfive"></div>
+                <div class="cardContent">
+                    <h2>Animals</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius odit sequi</p>
+                    <a href="{{url_for('animals')}}">
+                        <div class="cardBtn">
+                            <img src="../static/images/next.png" class="cardIcon" alt="cardIcon">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card six">
+                <img src="../static/images/academic.png" class="cardsixImg" alt="academic">
+                <div class="cardbgsix"></div>
+                <div class="cardContent">
+                    <h2>Academic</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius odit sequi</p>
+                    <a href="{{url_for('academic')}}">
+                        <div class="cardBtn">
+                            <img src="../static/images/next.png" class="cardIcon" alt="cardIcon">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+    </div>
+
+    <!------------------------FOOTER----------------------------->
+    <div class="footer">
+        <h2>WeShare.</h2>
+        <div class="footerlinks">
+            <a href="{{url_for('all')}}" class="mainlink">Blog</a>
+            <a href="{{url_for('login')}}">Login</a>
+            <a href="{{url_for('register')}}">Register</a>
+            <a href="{{url_for('about')}}">About</a>
+        </div>
+    </div>
+
+
+    
+{%endblock content%}
